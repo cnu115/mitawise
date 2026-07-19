@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MitaWise – Account Deletion</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #208AEF;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    header p {
+      opacity: 0.9;
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #334155;
+    }
+
+    p, li {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: #208AEF;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .warning {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .warning p {
+      color: #991b1b;
+      font-weight: 500;
+    }
+
+    .email-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #208AEF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .email-link:hover {
+      background: #1a6fcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #208AEF;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MitaWise</h1>
+    <p>Account & Data Deletion</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>How to Delete Your Account</h2>
+      <p>You can delete your MitaWise account and all associated data using either of the methods below.</p>
+
+      <p>To delete your account, send a request from your registered email address to:</p>
+      <a class="email-link" href="mailto:mitawiseapp@gmail.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20MitaWise%20account%20and%20all%20associated%20data.%0A%0ARegistered%20email%3A%20%5Byour%20email%5D">
+        mitawiseapp@gmail.com
+      </a>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">We will process your request within 7 business days.</p>
+    </div>
+
+    <div class="card">
+      <h2>What Gets Deleted</h2>
+      <p>When you delete your account, the following data is <strong>permanently removed</strong> from our servers:</p>
+      <ul>
+        <li>Your profile information (name, email, avatar)</li>
+        <li>All expense and income records</li>
+        <li>Custom categories</li>
+        <li>User settings and preferences</li>
+        <li>Budget configurations</li>
+        <li>App ratings and reviews</li>
+        <li>All authentication tokens</li>
+      </ul>
+
+      <div class="warning">
+        <p>⚠️ This action is irreversible. Once deleted, your data cannot be recovered.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Data Retained by Third Parties</h2>
+      <p>If you used Google Drive backup, the backup file in your Google Drive appDataFolder is <strong>not</strong> automatically deleted. You can remove it manually:</p>
+      <ol class="steps">
+        <li>Go to <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a></li>
+        <li>Open <strong>Settings → Manage Apps</strong></li>
+        <li>Find MitaWise and select <strong>Delete hidden app data</strong></li>
+      </ol>
+      <p style="margin-top: 0.75rem;">Profile photos hosted on Cloudinary will be deleted along with your account.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MitaWise. <a href="privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
