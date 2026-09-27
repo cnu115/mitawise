@@ -4,8 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MitaWise – Expense &amp; Income Tracker</title>
-  <meta name="description" content="MitaWise is a simple, private expense and income tracker for Android. Your data stays on your phone, with optional Google Drive backup.">
+  <meta name="description" content="MitaWise is a free, private expense and income tracker for Android. Track spending, EMIs and budgets offline — your data stays on your phone, with optional Google Drive backup.">
+  <meta name="keywords" content="expense tracker, income tracker, budget app, money manager, EMI tracker, personal finance app, offline expense tracker, Android, India">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="google-play-app" content="app-id=com.mitawise.app">
+  <link rel="canonical" href="https://mitawise.in/">
   <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Link previews (WhatsApp, LinkedIn, Facebook, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MitaWise">
+  <meta property="og:title" content="MitaWise – Expense &amp; Income Tracker">
+  <meta property="og:description" content="Track expenses, income and EMIs privately on your phone. Works offline, with optional Google Drive backup.">
+  <meta property="og:url" content="https://mitawise.in/">
+  <meta property="og:image" content="https://mitawise.in/logo.png">
+  <meta property="og:image:alt" content="MitaWise app logo">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MitaWise – Expense &amp; Income Tracker">
+  <meta name="twitter:description" content="Track expenses, income and EMIs privately on your phone. Works offline, with optional Google Drive backup.">
+  <meta name="twitter:image" content="https://mitawise.in/logo.png">
+
+  <!-- Structured data: lets Google show MitaWise as an app, with its developer -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "@id": "https://mitawise.in/#app",
+        "name": "MitaWise",
+        "alternateName": "MitaWise – Expense & Income Tracker",
+        "description": "A private expense and income tracker for Android. Track spending, EMIs and budgets offline, with optional Google Drive backup.",
+        "url": "https://mitawise.in/",
+        "image": "https://mitawise.in/logo.png",
+        "operatingSystem": "Android",
+        "applicationCategory": "FinanceApplication",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.mitawise.app",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.mitawise.app",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "author": { "@id": "https://mitawise.in/#developer" },
+        "publisher": { "@id": "https://mitawise.in/#developer" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://mitawise.in/#developer",
+        "name": "Srinivas Madamshetty",
+        "jobTitle": "MERN Full Stack Developer",
+        "url": "https://cnu115.github.io/",
+        "sameAs": [
+          "https://github.com/cnu115",
+          "https://www.linkedin.com/in/srinivas-madamshetty-23223172/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mitawise.in/#website",
+        "name": "MitaWise",
+        "url": "https://mitawise.in/",
+        "inLanguage": "en-IN"
+      }
+    ]
+  }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -34,7 +97,7 @@
     }
 
     header h1 { font-size: 2rem; font-weight: 700; margin-top: 1rem; }
-    header p  { opacity: 0.9; margin-top: 0.25rem; font-size: 1.05rem; }
+    header p  { color: #e0e7ff; margin-top: 0.25rem; font-size: 1.05rem; }
 
     .play-btn {
       display: inline-block;
@@ -84,6 +147,17 @@
 
     .links { display: flex; flex-wrap: wrap; gap: 1rem; }
 
+    .dev-row { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .dev-photo { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; }
+    .dev-name { font-size: 1.05rem; font-weight: 700; color: #0f172a; }
+    .dev-role { font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem; }
+    .dev-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .dev-links a {
+      padding: 0.4rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 999px;
+      font-size: 0.88rem; font-weight: 600; color: #1E3A8A;
+    }
+    .dev-links a:hover { background: #eff6ff; text-decoration: none; }
+
     footer {
       text-align: center;
       padding: 1.5rem 1rem;
@@ -123,6 +197,23 @@
     <div class="card">
       <h2>How we use Google data</h2>
       <p>Signing in with Google is optional. MitaWise uses your Google name, email, and photo only to show your profile in the app. If you turn on backup, MitaWise uses the <code>drive.appdata</code> permission to save and restore a backup file in a hidden app folder in your own Google Drive — it cannot see your other files. We don't store your data on our servers. Read the full <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="card dev">
+      <h2>About the developer</h2>
+      <div class="dev-row">
+        <img class="dev-photo" src="https://avatars.githubusercontent.com/u/20332266?v=4" alt="Madamshetty Srinivas" width="72" height="72">
+        <div>
+          <p class="dev-name">Srinivas Madamshetty</p>
+          <p class="dev-role">MERN Full Stack Developer · Hyderabad, India</p>
+          <p>MitaWise is designed, built, and maintained by an independent developer.</p>
+          <div class="dev-links">
+            <a href="https://cnu115.github.io/" target="_blank" rel="noopener">Portfolio</a>
+            <a href="https://github.com/cnu115" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/srinivas-madamshetty-23223172/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="card">
