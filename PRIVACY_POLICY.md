@@ -1,163 +1,121 @@
 # Privacy Policy for MitaWise
 
-**Last updated:** July 19, 2025
+**Last updated:** September 27, 2026
 
-**Effective date:** July 19, 2025
+**Effective date:** September 27, 2026
 
-MitaWise ("we," "us," or "our") operates the MitaWise mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. Please read this policy carefully. By using MitaWise, you agree to the collection and use of information in accordance with this policy.
+MitaWise ("we," "us," or "our") makes the MitaWise mobile application (the "App"). This Privacy Policy explains what information the App handles, where it is stored, and the choices you have.
 
----
-
-## 1. Information We Collect
-
-### 1.1 Account Information
-
-When you create an account, we collect:
-
-- **Name** — your display name within the app
-- **Email address** — used for authentication, password recovery, and transactional communications
-- **Password** — stored as a one-way cryptographic hash (bcrypt); we never store or have access to your plain-text password
-- **Profile photo** (optional) — if you choose to upload an avatar
-
-### 1.2 Financial Data
-
-To provide expense and income tracking, we collect:
-
-- Expense records (amount, description, category, date)
-- Income records (amount, description, category, date)
-- Custom categories you create
-- Monthly and weekly budget settings
-
-### 1.3 User Preferences
-
-- Theme, language, currency, date format preferences
-- Reminder settings (enabled/disabled, preferred time)
-
-### 1.4 Device and Usage Information
-
-- Device type and operating system (collected by the platform for crash reporting)
-- We do **not** collect precise location, contacts, call logs, or SMS data
-
-### 1.5 App Ratings
-
-If you choose to rate the app, we store your rating (1–5) and optional review text.
+**In short:** your financial data is stored only on your phone. We do not run servers that store your expenses, income, or account. If you turn on backup, a copy is saved to **your own** Google Drive, which only you and the App can access.
 
 ---
 
-## 2. How We Use Your Information
+## 1. Information the App Stores on Your Device
 
-We use the information we collect to:
+The following is stored only on your device, in the App's private storage:
 
-- **Provide core functionality** — track your expenses, incomes, and budgets
-- **Authenticate your account** — secure login, token refresh, and password recovery
-- **Send transactional emails** — welcome emails and password reset codes (we do not send marketing emails)
-- **Sync and backup your data** — if you opt into Google Drive backup
-- **Improve the App** — understand usage patterns and fix issues
+- **Financial data** — expense and income records (amount, description, category, date), tags, custom categories, recurring expenses (e.g. EMIs, rent), and budgets
+- **Preferences** — currency, theme, language, date format, and reminder settings
+- **Profile (optional)** — your name, email address, and profile photo, if you sign in with Google or pick a photo
+- **App rating (optional)** — your star rating and feedback, if you use "Rate the App"
+
+We (the developer) cannot see or access this data. Uninstalling the App or clearing its data deletes it from your device.
 
 ---
 
-## 3. Third-Party Services
+## 2. Google Sign-In (Optional)
 
-We use the following third-party services to operate the App:
+You can use the App without an account. If you choose **Continue with Google**, the App receives your Google name, email address, and profile photo from Google to show in your profile. This information stays on your device. Signing in with Google is also needed for Google Drive backup.
 
-| Service | Purpose | Data Shared |
-|---------|---------|-------------|
-| **Google OAuth** | Optional sign-in and Google Drive backup authentication | Email (for auth), Drive appData (backup file only) |
-| **Google Drive** | Optional cloud backup of your financial data | Encrypted backup file stored in your private appDataFolder (invisible in your Drive) |
-| **Cloudinary** | Profile photo storage | Avatar image file only |
-| **Resend** | Transactional email delivery | Email address, name (for personalization) |
-| **PostgreSQL (hosted)** | Database storage | All account and financial data |
-| **Render** | Backend hosting | Data processed through their infrastructure |
+---
 
-Each third-party service is governed by its own privacy policy. We encourage you to review them:
+## 3. Google Drive Backup (Optional)
+
+If you use backup, or turn on **Auto backup daily**:
+
+- The App requests the `drive.appdata` permission, which only allows access to a hidden, app-specific folder in **your** Google Drive. The App cannot see or change any of your other Drive files.
+- The backup file contains your financial data, tags, categories, recurring expenses, and preferences in JSON format. It does not include your profile photo.
+- The file is sent directly from your phone to Google over an encrypted (HTTPS) connection. It does not pass through any server of ours.
+- Auto backup runs at most once a day, only when you open the App, and only after you have made a backup yourself. You can turn it off in Settings.
+- You can remove the backup at any time from Google Drive (Settings → Manage apps → MitaWise → Delete hidden app data), or by revoking the App's access in your Google Account.
+
+Google's handling of this data is governed by the [Google Privacy Policy](https://policies.google.com/privacy). MitaWise's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
+
+---
+
+## 4. Earlier Versions
+
+Versions 1.1.1 and earlier stored data on MitaWise servers. Those servers are being shut down and the data stored on them will be permanently deleted. Current versions of the App do not connect to them. To ask us to delete your old data sooner, contact us (see Section 11).
+
+---
+
+## 5. Third-Party Services
+
+The App uses the following services. They may collect information as described in their own policies:
+
+| Service | Purpose | Data involved |
+|---------|---------|---------------|
+| **Google Sign-In** | Optional profile and Drive authentication | Name, email, profile photo (kept on device) |
+| **Google Drive** | Optional backup, stored in your own Drive | Your backup file |
+| **Google Analytics for Firebase** | Understanding how the App is used, to improve it | App usage events (e.g. screens viewed, "expense added" with its category name), device model, OS version, app instance ID. **Amounts, descriptions, and your name or email are not sent.** |
+| **Google AdMob** | Showing ads | Device advertising ID, approximate location from IP address, and ad-interaction data, as described by Google |
 
 - [Google Privacy Policy](https://policies.google.com/privacy)
-- [Cloudinary Privacy Policy](https://cloudinary.com/privacy)
-- [Resend Privacy Policy](https://resend.com/legal/privacy-policy)
-- [Render Privacy Policy](https://render.com/privacy)
+- [How Google uses information from apps that use its services](https://policies.google.com/technologies/partner-sites)
+
+You can reset or opt out of personalized ads in your device settings (Settings → Google → Ads).
 
 ---
 
-## 4. Google Drive Backup
+## 6. Data Security
 
-If you choose to use the Google Drive backup feature:
-
-- We request access to the `drive.appdata` scope, which gives us access **only** to a hidden, app-specific folder in your Google Drive — not your personal files.
-- We also request `userinfo.email` to identify your Google account.
-- Backup data includes your expenses, incomes, and categories in JSON format.
-- You can delete the backup at any time through the App or directly in Google Drive.
+- Your data stays in the App's private storage on your device, which other apps cannot read.
+- Backups are transferred over HTTPS and stored in a private app folder in your Google Drive.
+- Keeping your device secure (screen lock, updates) helps protect your data.
 
 ---
 
-## 5. Data Storage and Security
+## 7. Data Retention and Deletion
 
-- All passwords are hashed using bcrypt with 12 rounds before storage.
-- Authentication tokens are stored securely on your device using encrypted device storage (Expo SecureStore).
-- Access tokens expire after 15 minutes; refresh tokens expire after 15 days.
-- Password reset codes expire after 15 minutes.
-- Data is transmitted over HTTPS.
-- We implement rate limiting to protect against abuse.
+- Data on your device is kept until you delete it. You can use **Settings → Clear All Data**, clear the App's storage, or uninstall the App.
+- Google Drive backups are kept until you delete them (see Section 3).
+- Because we do not store your data on our servers, there is no online account for us to delete. Data from versions 1.1.1 and earlier is covered in Section 4.
 
 ---
 
-## 6. Data Retention
+## 8. Your Choices
 
-- Your account and financial data are retained as long as your account is active.
-- If you delete your account, all associated data (expenses, incomes, settings, tokens, and ratings) is permanently removed from our servers via cascading deletion.
-- Refresh tokens are automatically deleted upon logout or expiration.
-
----
-
-## 7. Your Rights and Choices
-
-You have the right to:
-
-- **Access your data** — view all your expenses, incomes, and account information within the App
-- **Export your data** — use the export feature to download your financial data
-- **Update your information** — edit your name, email, avatar, and preferences at any time
-- **Delete your account** — request account deletion, which removes all your data permanently
-- **Opt out of backups** — Google Drive backup is entirely optional and user-initiated
+- **Use without an account.** Google sign-in is optional.
+- **Export.** Download your data as CSV or JSON at any time.
+- **Control backups.** Backups are optional, and you can turn off auto backup.
+- **Delete.** Clear your data in the App, or delete your Drive backup.
 
 ---
 
-## 8. Children's Privacy
+## 9. Children's Privacy
 
-MitaWise is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete it.
-
----
-
-## 9. Permissions Used
-
-The App may request the following device permissions:
-
-- **Camera** — to capture photos for profile pictures or receipts
-- **Photo Library** — to select images from your device for your profile
-- **Internet** — required for syncing data with our servers
-
-We do **not** request or access:
-
-- Location data
-- Contacts
-- Phone/call logs
-- SMS messages
-- Microphone (for recording)
+MitaWise is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us.
 
 ---
 
-## 10. Changes to This Privacy Policy
+## 10. Permissions Used
 
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the App and updating the "Last updated" date above. You are advised to review this Privacy Policy periodically for any changes.
+- **Photos / media** — only if you choose a profile photo
+- **Notifications** — for the daily reminder and recurring-expense reminders, if you turn them on
+- **Internet** — for optional Google sign-in, Google Drive backup, analytics, and ads
+
+The App does **not** access your location (GPS), contacts, call logs, SMS, or microphone.
 
 ---
 
 ## 11. Contact Us
 
-If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
+For questions about this Privacy Policy, or to request deletion of data from earlier versions, contact:
 
-**Email:** mitawiseapp@gmail.com
+**Email:** mitawise.app@gmail.com
 
 ---
 
-## 12. Consent
+## 12. Changes to This Policy
 
-By using MitaWise, you consent to our Privacy Policy and agree to its terms.
+We may update this Privacy Policy. When we do, we will update the "Last updated" date above and, for significant changes, notify you in the App.
