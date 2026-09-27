@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MitaWise – Delete Your Data</title>
+  <link rel="icon" href="favicon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #208AEF;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    header p {
+      opacity: 0.9;
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #334155;
+    }
+
+    p, li {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: #208AEF;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .warning {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .warning p {
+      color: #991b1b;
+      font-weight: 500;
+    }
+
+    .email-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #208AEF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .email-link:hover {
+      background: #1a6fcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #208AEF;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MitaWise</h1>
+    <p>Delete Your Account &amp; Data</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Where your data is</h2>
+      <p>MitaWise stores your data <strong>only on your phone</strong>. We do not keep your expenses, income, or account on our servers, so you can delete everything yourself at any time — no request needed.</p>
+    </div>
+
+    <div class="card">
+      <h2>1. Delete data on your phone</h2>
+      <p>Choose one:</p>
+      <ol class="steps">
+        <li><strong>In the app:</strong> open <strong>Settings → Clear All Data</strong> to delete all expenses, income, and recurring expenses for the account you're signed in to.</li>
+        <li><strong>Everything, for every account on the phone:</strong> Android <strong>Settings → Apps → MitaWise → Storage → Clear storage</strong>.</li>
+        <li><strong>Uninstall MitaWise.</strong> Android removes all of the app's data with it.</li>
+      </ol>
+      <div class="warning">
+        <p>⚠️ Deleted data cannot be recovered unless you have a Google Drive backup.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. Delete your Google Drive backup (if you made one)</h2>
+      <p>Backups are stored in a hidden app folder in your own Google Drive. To remove them:</p>
+      <ol class="steps">
+        <li>Open <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a> on a computer.</li>
+        <li>Click <strong>⚙ Settings → Settings → Manage apps</strong>.</li>
+        <li>Find <strong>MitaWise</strong>, click <strong>Options → Delete hidden app data</strong>.</li>
+      </ol>
+      <p style="margin-top: 0.75rem;">You can also remove MitaWise's access to your Google account at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>. Turn off <strong>Auto backup daily</strong> in the app first, or it will create a new backup.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Data from older versions (1.1.1 and earlier)</h2>
+      <p>Older versions stored data on MitaWise servers. That data is being permanently deleted as the servers are shut down. To have it deleted sooner, email us from the address you used in the app:</p>
+      <a class="email-link" href="mailto:mitawise.app@gmail.com?subject=Data%20Deletion%20Request&body=Please%20delete%20my%20MitaWise%20data%20from%20your%20servers.%0A%0AEmail%20used%20in%20the%20app%3A%20%5Byour%20email%5D">
+        mitawise.app@gmail.com
+      </a>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">We process requests within 7 business days. This removes your profile, expenses, income, categories, tags, settings, and ratings from the old servers.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MitaWise. <a href="index.html">Home</a> · <a href="privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

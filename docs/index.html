@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MitaWise – Account Deletion</title>
+  <title>MitaWise – Expense &amp; Income Tracker</title>
+  <meta name="description" content="MitaWise is a simple, private expense and income tracker for Android. Your data stays on your phone, with optional Google Drive backup.">
+  <link rel="icon" href="favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,25 +20,36 @@
     }
 
     header {
-      background: #208AEF;
+      background: linear-gradient(135deg, #2563EB, #1E3A8A);
       color: #fff;
-      padding: 1.5rem 1rem;
+      padding: 3rem 1rem 2.5rem;
       text-align: center;
     }
 
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
+    header img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
-    header p {
-      opacity: 0.9;
-      margin-top: 0.25rem;
-      font-size: 0.95rem;
+    header h1 { font-size: 2rem; font-weight: 700; margin-top: 1rem; }
+    header p  { opacity: 0.9; margin-top: 0.25rem; font-size: 1.05rem; }
+
+    .play-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem;
+      background: #fff;
+      color: #1E3A8A;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
     }
+    .play-btn:hover { background: #e0e7ff; }
 
     main {
-      max-width: 640px;
+      max-width: 760px;
       margin: 2rem auto;
       padding: 0 1rem;
       flex: 1;
@@ -50,91 +63,26 @@
       margin-bottom: 1.5rem;
     }
 
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: #0f172a;
-    }
+    h2 { font-size: 1.25rem; margin-bottom: 1rem; color: #0f172a; }
+    p, li { color: #475569; font-size: 0.95rem; }
 
-    h3 {
-      font-size: 1.05rem;
-      margin: 1.25rem 0 0.5rem;
-      color: #334155;
-    }
-
-    p, li {
-      color: #475569;
-      font-size: 0.95rem;
-    }
-
-    ul {
-      padding-left: 1.25rem;
-      margin: 0.5rem 0;
-    }
-
-    li {
-      margin-bottom: 0.4rem;
-    }
-
-    .steps {
-      counter-reset: step;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
       list-style: none;
-      padding-left: 0;
     }
+    .features li {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .features strong { display: block; color: #0f172a; margin-bottom: 0.25rem; }
 
-    .steps li {
-      counter-increment: step;
-      position: relative;
-      padding-left: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    a { color: #208AEF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    .steps li::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 1.75rem;
-      height: 1.75rem;
-      border-radius: 50%;
-      background: #208AEF;
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .warning {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin-top: 1rem;
-    }
-
-    .warning p {
-      color: #991b1b;
-      font-weight: 500;
-    }
-
-    .email-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #208AEF;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background 0.2s;
-    }
-
-    .email-link:hover {
-      background: #1a6fcc;
-    }
+    .links { display: flex; flex-wrap: wrap; gap: 1rem; }
 
     footer {
       text-align: center;
@@ -142,63 +90,53 @@
       color: #94a3b8;
       font-size: 0.85rem;
     }
-
-    footer a {
-      color: #208AEF;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="MitaWise logo">
     <h1>MitaWise</h1>
-    <p>Account & Data Deletion</p>
+    <p>Track smart, save more</p>
+    <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.mitawise.app" target="_blank" rel="noopener">Get it on Google Play</a>
   </header>
 
   <main>
     <div class="card">
-      <h2>How to Delete Your Account</h2>
-      <p>You can delete your MitaWise account and all associated data using either of the methods below.</p>
-
-      <p>To delete your account, send a request from your registered email address to:</p>
-      <a class="email-link" href="mailto:mitawise.app@gmail.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20MitaWise%20account%20and%20all%20associated%20data.%0A%0ARegistered%20email%3A%20%5Byour%20email%5D">
-        mitawiseapp@gmail.com
-      </a>
-      <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #64748b;">We will process your request within 7 business days.</p>
+      <h2>What is MitaWise?</h2>
+      <p>MitaWise is a simple expense and income tracker for Android. Log what you spend and earn, see where your money goes, and keep track of monthly EMIs and bills — all in one place. Your data is stored privately on your phone, and you can back it up to your own Google Drive.</p>
     </div>
 
     <div class="card">
-      <h2>What Gets Deleted</h2>
-      <p>When you delete your account, the following data is <strong>permanently removed</strong> from our servers:</p>
-      <ul>
-        <li>Your profile information (name, email, avatar)</li>
-        <li>All expense and income records</li>
-        <li>Custom categories</li>
-        <li>User settings and preferences</li>
-        <li>Budget configurations</li>
-        <li>App ratings and reviews</li>
-        <li>All authentication tokens</li>
+      <h2>Features</h2>
+      <ul class="features">
+        <li><strong>💰 Expenses &amp; income</strong>Add transactions in seconds with categories and tags.</li>
+        <li><strong>📊 Insights</strong>Monthly statistics, category breakdowns, and your running balance.</li>
+        <li><strong>📅 Calendar view</strong>See your spending day by day.</li>
+        <li><strong>🔁 Recurring expenses</strong>EMIs, rent, and subscriptions added automatically every month.</li>
+        <li><strong>🔒 Private &amp; offline</strong>Works without internet. Your data stays on your phone.</li>
+        <li><strong>☁️ Google Drive backup</strong>Optional daily backup to your own Drive, and restore on a new phone.</li>
+        <li><strong>🔔 Smart reminders</strong>Daily reminders and alerts before bills are due.</li>
+        <li><strong>📤 Export</strong>Download your data as CSV or JSON anytime.</li>
       </ul>
-
-      <div class="warning">
-        <p>⚠️ This action is irreversible. Once deleted, your data cannot be recovered.</p>
-      </div>
     </div>
 
     <div class="card">
-      <h2>Data Retained by Third Parties</h2>
-      <p>If you used Google Drive backup, the backup file in your Google Drive appDataFolder is <strong>not</strong> automatically deleted. You can remove it manually:</p>
-      <ol class="steps">
-        <li>Go to <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a></li>
-        <li>Open <strong>Settings → Manage Apps</strong></li>
-        <li>Find MitaWise and select <strong>Delete hidden app data</strong></li>
-      </ol>
-      <p style="margin-top: 0.75rem;">Profile photos hosted on Cloudinary will be deleted along with your account.</p>
+      <h2>How we use Google data</h2>
+      <p>Signing in with Google is optional. MitaWise uses your Google name, email, and photo only to show your profile in the app. If you turn on backup, MitaWise uses the <code>drive.appdata</code> permission to save and restore a backup file in a hidden app folder in your own Google Drive — it cannot see your other files. We don't store your data on our servers. Read the full <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="card">
+      <h2>Legal &amp; support</h2>
+      <div class="links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="delete-account.html">Delete your account &amp; data</a>
+        <a href="mailto:mitawise.app@gmail.com">Contact: mitawise.app@gmail.com</a>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 MitaWise. <a href="privacy-policy.html">Privacy Policy</a></p>
+    <p>&copy; 2026 MitaWise</p>
   </footer>
 </body>
 </html>
