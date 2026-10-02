@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MitaWise – Expense &amp; Income Tracker</title>
+  <title>MitaWise – Free Expense Tracker &amp; Budget App for Android (Works Offline)</title>
   <meta name="description" content="MitaWise is a free, private expense and income tracker for Android. Track spending, EMIs and budgets offline — your data stays on your phone, with optional Google Drive backup.">
   <meta name="keywords" content="expense tracker, income tracker, budget app, money manager, EMI tracker, personal finance app, offline expense tracker, Android, India">
   <meta name="robots" content="index, follow">
@@ -21,6 +21,8 @@
   <meta property="og:url" content="https://mitawise.in/">
   <meta property="og:image" content="https://mitawise.in/logo.png">
   <meta property="og:image:alt" content="MitaWise app logo">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
   <meta property="og:locale" content="en_IN">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="MitaWise – Expense &amp; Income Tracker">
@@ -60,11 +62,48 @@
         ]
       },
       {
+        "@type": "Organization",
+        "@id": "https://mitawise.in/#organization",
+        "name": "MitaWise",
+        "url": "https://mitawise.in/",
+        "logo": "https://mitawise.in/logo.png",
+        "email": "mitawise.app@gmail.com",
+        "founder": { "@id": "https://mitawise.in/#developer" },
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.mitawise.app",
+          "https://github.com/cnu115/mitawise"
+        ]
+      },
+      {
         "@type": "WebSite",
         "@id": "https://mitawise.in/#website",
         "name": "MitaWise",
+        "alternateName": ["Mita Wise", "mitawise.in"],
         "url": "https://mitawise.in/",
-        "inLanguage": "en-IN"
+        "inLanguage": "en-IN",
+        "publisher": { "@id": "https://mitawise.in/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mitawise.in/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is MitaWise?",
+            "acceptedAnswer": { "@type": "Answer", "text": "MitaWise is a free expense and income tracker app for Android. It helps you log daily spending, track income, manage EMIs and rent, and see monthly reports. Your data stays on your phone." } },
+          { "@type": "Question", "name": "Is MitaWise free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. MitaWise is free to download on Google Play and is supported by ads." } },
+          { "@type": "Question", "name": "Does MitaWise work offline?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. MitaWise works fully offline. Internet is only needed for optional Google sign-in and Google Drive backup." } },
+          { "@type": "Question", "name": "Where is my data stored?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Only on your phone. MitaWise has no servers that store your expenses or income. If you turn on backup, a copy is saved to a private app folder in your own Google Drive." } },
+          { "@type": "Question", "name": "How do I move my data to a new phone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Back up to Google Drive from Settings, install MitaWise on the new phone, sign in with the same Google account, and tap Restore." } },
+          { "@type": "Question", "name": "Can MitaWise track EMIs, rent and subscriptions?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Add a recurring expense with the amount, day of the month and end date, and MitaWise adds it every month and reminds you before it is due." } },
+          { "@type": "Question", "name": "Which currencies does MitaWise support?",
+            "acceptedAnswer": { "@type": "Answer", "text": "MitaWise supports 25 currencies, including Indian Rupee (INR), US Dollar, Euro, British Pound, UAE Dirham and Saudi Riyal." } },
+          { "@type": "Question", "name": "Is MitaWise related to MetaWise?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. MitaWise (mitawise.in) is a personal finance app for tracking expenses and income. It is not related to MetaWise or any marketing agency." } }
+        ]
       }
     ]
   }
@@ -96,7 +135,16 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.25);
     }
 
-    header h1 { font-size: 2rem; font-weight: 700; margin-top: 1rem; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-top: 1rem; line-height: 1.2; }
+    header h1 .h1-sub { display: block; font-size: 1.1rem; font-weight: 600; color: #e0e7ff; margin-top: 0.35rem; }
+
+    .faq details { border-top: 1px solid #e2e8f0; padding: 0.85rem 0; }
+    .faq details:first-of-type { border-top: 0; padding-top: 0; }
+    .faq summary { cursor: pointer; font-weight: 600; color: #0f172a; font-size: 0.98rem; }
+    .faq summary:focus-visible { outline: 2px solid #208AEF; outline-offset: 3px; border-radius: 4px; }
+    .faq details p { margin-top: 0.5rem; }
+    .steps-list { padding-left: 1.25rem; }
+    .steps-list li { margin-bottom: 0.5rem; }
     header p  { color: #e0e7ff; margin-top: 0.25rem; font-size: 1.05rem; }
 
     .play-btn {
@@ -168,16 +216,17 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="MitaWise logo">
-    <h1>MitaWise</h1>
-    <p>Track smart, save more</p>
+    <img src="logo.png" alt="MitaWise expense tracker app logo" width="96" height="96">
+    <h1>MitaWise <span class="h1-sub">Expense Tracker &amp; Budget App</span></h1>
+    <p>Track smart, save more — free, private and works offline</p>
     <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.mitawise.app" target="_blank" rel="noopener">Get it on Google Play</a>
   </header>
 
   <main>
     <div class="card">
       <h2>What is MitaWise?</h2>
-      <p>MitaWise is a simple expense and income tracker for Android. Log what you spend and earn, see where your money goes, and keep track of monthly EMIs and bills — all in one place. Your data is stored privately on your phone, and you can back it up to your own Google Drive.</p>
+      <p>MitaWise is a free expense tracker and budget app for Android. Log what you spend and earn in seconds, see where your money goes with monthly reports, and keep track of EMIs, rent and bills — all in one simple money manager. Your data is stored privately on your phone, and you can back it up to your own Google Drive.</p>
+      <p style="margin-top:0.75rem">Unlike many finance apps, MitaWise doesn't need an account, doesn't upload your transactions to a company server, and works without internet. It's built for everyday personal finance in India and supports 25 currencies, including INR, USD, EUR, GBP and AED.</p>
     </div>
 
     <div class="card">
@@ -195,6 +244,49 @@
     </div>
 
     <div class="card">
+      <h2>How to start tracking expenses with MitaWise</h2>
+      <ol class="steps-list">
+        <li><strong>Install MitaWise</strong> free from <a href="https://play.google.com/store/apps/details?id=com.mitawise.app" target="_blank" rel="noopener">Google Play</a>.</li>
+        <li><strong>Start right away</strong> — continue without an account, or sign in with Google to enable Drive backup.</li>
+        <li><strong>Add an expense or income</strong> with an amount, category and optional tags like "Goa Trip".</li>
+        <li><strong>Add recurring payments</strong> such as a home-loan EMI or rent once; MitaWise fills in every month.</li>
+        <li><strong>Check your reports</strong> on the dashboard, calendar and statistics screens to see where your money goes.</li>
+      </ol>
+    </div>
+
+    <div class="card faq">
+      <h2>Frequently asked questions</h2>
+      <details>
+        <summary>Is MitaWise free?</summary>
+        <p>Yes. MitaWise is free to download on Google Play and is supported by ads.</p>
+      </details>
+      <details>
+        <summary>Does MitaWise work offline?</summary>
+        <p>Yes. MitaWise works fully offline. Internet is only needed for optional Google sign-in and Google Drive backup.</p>
+      </details>
+      <details>
+        <summary>Where is my data stored?</summary>
+        <p>Only on your phone. MitaWise has no servers that store your expenses or income. If you turn on backup, a copy is saved to a private app folder in your own Google Drive.</p>
+      </details>
+      <details>
+        <summary>How do I move my data to a new phone?</summary>
+        <p>Back up to Google Drive from Settings, install MitaWise on the new phone, sign in with the same Google account, and tap Restore.</p>
+      </details>
+      <details>
+        <summary>Can MitaWise track EMIs, rent and subscriptions?</summary>
+        <p>Yes. Add a recurring expense with the amount, day of the month and end date, and MitaWise adds it every month and reminds you before it is due.</p>
+      </details>
+      <details>
+        <summary>Which currencies does MitaWise support?</summary>
+        <p>MitaWise supports 25 currencies, including Indian Rupee (INR), US Dollar, Euro, British Pound, UAE Dirham and Saudi Riyal.</p>
+      </details>
+      <details>
+        <summary>Is MitaWise related to MetaWise?</summary>
+        <p>No. MitaWise (mitawise.in) is a personal finance app for tracking expenses and income. It is not related to MetaWise or any marketing agency.</p>
+      </details>
+    </div>
+
+    <div class="card">
       <h2>How we use Google data</h2>
       <p>Signing in with Google is optional. MitaWise uses your Google name, email, and photo only to show your profile in the app. If you turn on backup, MitaWise uses the <code>drive.appdata</code> permission to save and restore a backup file in a hidden app folder in your own Google Drive — it cannot see your other files. We don't store your data on our servers. Read the full <a href="privacy-policy.html">Privacy Policy</a>.</p>
     </div>
@@ -202,7 +294,7 @@
     <div class="card dev">
       <h2>About the developer</h2>
       <div class="dev-row">
-        <img class="dev-photo" src="https://avatars.githubusercontent.com/u/20332266?v=4" alt="Madamshetty Srinivas" width="72" height="72">
+        <img class="dev-photo" src="https://avatars.githubusercontent.com/u/20332266?v=4" alt="Srinivas Madamshetty, developer of MitaWise" width="72" height="72" loading="lazy">
         <div>
           <p class="dev-name">Srinivas Madamshetty</p>
           <p class="dev-role">MERN Full Stack Developer · Hyderabad, India</p>
@@ -227,7 +319,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 MitaWise</p>
+    <p>&copy; 2026 MitaWise · Free expense &amp; income tracker for Android · <a href="privacy-policy.html">Privacy</a> · <a href="delete-account.html">Delete data</a></p>
   </footer>
 </body>
 </html>
